@@ -1,0 +1,19 @@
+For a fresh installation of laravel
+
+edit the following files
+for the .env file
+add the DB_USERNAME = "INSERT YOUR DATABASE USERNAME IN HERE"
+add the DB_PASSWORD = "INSERT YOUR DATABASE PASSWORD IN HERE"
+
+in the config/database.php file
+edit the following
+in the mysql section  to this
+'charset' => 'utf8'
+'collation' => 'utf8_unicode_ci'
+
+then finally edit the AppServiceProvider.php file
+use Illuminate\Support\Facades\Schema; //at the top of the class
+
+function boot(){
+    Schema::defaultStringLength(191);
+}
